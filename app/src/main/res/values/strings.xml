@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Compose App</string>
+    <string name="happy_birthday_text">happy birthday boss</string>
+    <string name="name_text">- beddu</string>
 </resources>
