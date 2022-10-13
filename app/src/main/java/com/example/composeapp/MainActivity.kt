@@ -26,20 +26,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Surface(color = Color.Magenta) {
-        Text(
-            text = "Hello my name is $name!",
-            modifier = Modifier.padding(24.dp)
-        )
     }
 }
 
@@ -50,6 +40,6 @@ fun Greeting(name: String) {
 @Composable
 fun BirthdayCardPreview() {
     BirthdayCardTheme {
-        Greeting("Bay bay")
+
     }
 }
