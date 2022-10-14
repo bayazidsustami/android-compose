@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -16,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,10 +34,11 @@ class QuadrantActivity: ComponentActivity() {
 }
 
 @Composable
-fun TextField(textFieldData: TextFieldData){
+fun TextField(textFieldData: TextFieldData, modifier: Modifier){
     Column(
-        modifier = Modifier
-            .background(textFieldData.color),
+        modifier = modifier
+            .background(textFieldData.color)
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -50,6 +53,7 @@ fun TextField(textFieldData: TextFieldData){
         )
         Text(
             text = textFieldData.title,
+            textAlign = TextAlign.Justify,
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.CenterHorizontally)
@@ -58,34 +62,32 @@ fun TextField(textFieldData: TextFieldData){
 }
 
 @Composable
-fun FirstQuadrantRow(items: List<TextFieldData>) {
+fun FirstQuadrantRow(items: List<TextFieldData>, modifier: Modifier) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .wrapContentWidth(Alignment.CenterHorizontally)
     ) {
-        TextField(items[0])
-        TextField(items[1])
+        TextField(items[0], Modifier.weight(1f))
+        TextField(items[1], Modifier.weight(1f))
     }
 }
 
 @Composable
-fun SecondQuadrantRow(items: List<TextFieldData>) {
+fun SecondQuadrantRow(items: List<TextFieldData>, modifier: Modifier) {
     Row(
-
+        modifier = modifier
     ) {
-        TextField(items[2])
-        TextField(items[3])
+        TextField(items[2], Modifier.weight(1f))
+        TextField(items[3], Modifier.weight(1f))
     }
 }
 
 @Composable
 fun TextQuadrant(items: List<TextFieldData>){
-   Column(
-       modifier = Modifier.fillMaxWidth()
-   ) {
-       FirstQuadrantRow(items)
-       SecondQuadrantRow(items)
+   Column(modifier = Modifier.fillMaxWidth()) {
+       FirstQuadrantRow(items, Modifier.weight(1f))
+       SecondQuadrantRow(items, Modifier.weight(1f))
    }
 }
 
