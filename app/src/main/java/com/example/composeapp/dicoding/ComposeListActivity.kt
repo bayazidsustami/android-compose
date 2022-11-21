@@ -17,8 +17,13 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.outlined.ExpandMore
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -79,6 +84,7 @@ fun GreetingList(names: List<String>) {
 
 @Composable
 fun GreetingName(name: String) {
+    var isExpanded by remember { mutableStateOf(false) }
     Row(
         modifier = Modifier.padding(8.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -99,9 +105,10 @@ fun GreetingName(name: String) {
             )
             Text(text = "Welcome to Dicoding!")
         }
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = { isExpanded = !isExpanded }) {
             Icon(
-                imageVector =Icons.Outlined.ExpandMore,
+                imageVector = if (isExpanded) Icons.Filled.ExpandLess
+                    else Icons.Outlined.ExpandMore,
                 contentDescription = null
             )
         }
