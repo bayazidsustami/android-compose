@@ -10,7 +10,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.composeapp.ui.theme.BirthdayCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +36,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Column {
-        Text(text = "Hello $name!")
+        Text(
+            text = "Hello $name!",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
+        )
         Text(text = "Welcome to Dicoding!")
     }
 }
