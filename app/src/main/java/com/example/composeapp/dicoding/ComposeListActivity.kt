@@ -7,6 +7,7 @@ import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -14,6 +15,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
@@ -75,13 +78,15 @@ fun HelloJetpackComposeApp() {
 @Composable
 fun GreetingList(names: List<String>) {
     if (names.isNotEmpty()) {
-        Column {
-            for (name in names) {
-                GreetingName(name)
+        LazyColumn {
+            items(names) {
+                GreetingName(it)
             }
         }
     } else {
-        Text("no people to great :(")
+        Box(contentAlignment = Alignment.Center) {
+            Text("No people to great :(")
+        }
     }
 }
 
