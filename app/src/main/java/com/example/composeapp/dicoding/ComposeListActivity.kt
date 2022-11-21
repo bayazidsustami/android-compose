@@ -11,9 +11,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ExpandMore
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -85,13 +89,21 @@ fun GreetingName(name: String) {
             contentDescription = null
         )
         Spacer(modifier = Modifier.width(8.dp))
-        Column {
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
             Text(
                 text = "Hello $name!",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(text = "Welcome to Dicoding!")
+        }
+        IconButton(onClick = { /*TODO*/ }) {
+            Icon(
+                imageVector =Icons.Outlined.ExpandMore,
+                contentDescription = null
+            )
         }
     }
 }
