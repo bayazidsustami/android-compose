@@ -1,6 +1,5 @@
 package com.example.composeapp.dicoding
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -28,10 +27,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.outlined.ExpandMore
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -42,7 +41,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composeapp.R
 import com.example.composeapp.ui.theme.BirthdayCardTheme
-
 
 private val sampleName = listOf(
     "Andre",
@@ -142,7 +140,6 @@ fun GreetingName(name: String) {
 @Preview(
     showBackground = true,
     device = Devices.PIXEL_4,
-    uiMode = UI_MODE_NIGHT_YES
 )
 @Composable
 fun HelloJetpackComposeAppPreview() {
