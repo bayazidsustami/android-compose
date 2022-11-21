@@ -3,6 +3,9 @@ package com.example.composeapp.dicoding
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -85,13 +88,20 @@ fun GreetingList(names: List<String>) {
 @Composable
 fun GreetingName(name: String) {
     var isExpanded by remember { mutableStateOf(false) }
+    val animatedSizeDp by animateDpAsState(
+        targetValue = if (isExpanded) 120.dp else 80.dp,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessLow
+        )
+    )
     Row(
         modifier = Modifier.padding(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
             painter = painterResource(R.drawable.jetpack_compose),
-            modifier = Modifier.size(80.dp),
+            modifier = Modifier.size(animatedSizeDp),
             contentDescription = null
         )
         Spacer(modifier = Modifier.width(8.dp))
