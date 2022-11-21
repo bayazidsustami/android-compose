@@ -1,4 +1,4 @@
-package com.example.composeapp
+package com.example.composeapp.google
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -31,6 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.composeapp.R
 import com.example.composeapp.ui.theme.BirthdayCardTheme
 
 class BusinessCardActivity: ComponentActivity() {

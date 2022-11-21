@@ -34,10 +34,10 @@
             android:name=".TaskManagerActivity"
             android:exported="false"/>
         <activity
-            android:name=".QuadrantActivity"
+            android:name=".google.QuadrantActivity"
             android:exported="false"/>
         <activity
-            android:name=".BusinessCardActivity"
+            android:name=".google.BusinessCardActivity"
             android:exported="false"/>
     </application>
 
