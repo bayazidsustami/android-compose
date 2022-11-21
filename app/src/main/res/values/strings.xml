@@ -7,4 +7,5 @@
     <string name="title_section">Jetpack Compose Tutorial</string>
     <string name="all_task_completed">All tasks completed</string>
     <string name="detail_task_completed">Nice work!</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
