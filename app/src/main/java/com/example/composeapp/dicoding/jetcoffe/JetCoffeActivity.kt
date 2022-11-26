@@ -24,10 +24,7 @@ import com.example.composeapp.dicoding.jetcoffe.model.Menu
 import com.example.composeapp.dicoding.jetcoffe.model.dummyBestSellerMenu
 import com.example.composeapp.dicoding.jetcoffe.model.dummyCategory
 import com.example.composeapp.dicoding.jetcoffe.model.dummyMenu
-import com.example.composeapp.dicoding.jetcoffe.ui.components.CategoryItem
-import com.example.composeapp.dicoding.jetcoffe.ui.components.MenuItem
-import com.example.composeapp.dicoding.jetcoffe.ui.components.SearchBar
-import com.example.composeapp.dicoding.jetcoffe.ui.components.SectionText
+import com.example.composeapp.dicoding.jetcoffe.ui.components.*
 import com.example.composeapp.dicoding.jetcoffe.ui.theme.JetCoffeeTheme
 
 class JetCoffeActivity : ComponentActivity() {
@@ -53,12 +50,18 @@ fun JetCoffeeApp() {
         modifier = Modifier.verticalScroll(rememberScrollState())
     ) {
         Banner()
-        SectionText(stringResource(R.string.section_category))
-        CategoryRow()
-        SectionText(stringResource(R.string.section_favorite_menu))
-        MenuRow(dummyMenu)
-        SectionText(stringResource(R.string.section_best_seller_menu))
-        MenuRow(dummyBestSellerMenu)
+        HomeSection(
+            title = stringResource(R.string.section_category),
+            content = { CategoryRow() }
+        )
+        HomeSection(
+            title = stringResource(R.string.section_favorite_menu),
+            content = { MenuRow(dummyMenu) }
+        )
+        HomeSection(
+            title = stringResource(R.string.section_best_seller_menu),
+            content = { MenuRow(dummyBestSellerMenu) }
+        )
     }
 }
 
