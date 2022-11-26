@@ -7,6 +7,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -18,8 +20,12 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composeapp.R
+import com.example.composeapp.dicoding.jetcoffe.model.Menu
+import com.example.composeapp.dicoding.jetcoffe.model.dummyBestSellerMenu
 import com.example.composeapp.dicoding.jetcoffe.model.dummyCategory
+import com.example.composeapp.dicoding.jetcoffe.model.dummyMenu
 import com.example.composeapp.dicoding.jetcoffe.ui.components.CategoryItem
+import com.example.composeapp.dicoding.jetcoffe.ui.components.MenuItem
 import com.example.composeapp.dicoding.jetcoffe.ui.components.SearchBar
 import com.example.composeapp.dicoding.jetcoffe.ui.components.SectionText
 import com.example.composeapp.dicoding.jetcoffe.ui.theme.JetCoffeeTheme
@@ -43,10 +49,16 @@ class JetCoffeActivity : ComponentActivity() {
 
 @Composable
 fun JetCoffeeApp() {
-    Column {
+    Column(
+        modifier = Modifier.verticalScroll(rememberScrollState())
+    ) {
         Banner()
         SectionText(stringResource(R.string.section_category))
         CategoryRow()
+        SectionText(stringResource(R.string.section_favorite_menu))
+        MenuRow(dummyMenu)
+        SectionText(stringResource(R.string.section_best_seller_menu))
+        MenuRow(dummyBestSellerMenu)
     }
 }
 
@@ -76,6 +88,22 @@ fun CategoryRow(
     ) {
         items(dummyCategory, key = { it.textCategory}){
             CategoryItem(it)
+        }
+    }
+}
+
+@Composable
+fun MenuRow(
+    listMenu: List<Menu>,
+    modifier: Modifier = Modifier,
+) {
+    LazyRow(
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp),
+        modifier = modifier
+    ) {
+        items(listMenu, key = {it.title}){
+            MenuItem(it)
         }
     }
 }
