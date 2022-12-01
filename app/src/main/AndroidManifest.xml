@@ -13,6 +13,22 @@
         android:theme="@style/Theme.ComposeApp"
         tools:targetApi="31">
         <activity
+            android:name=".dicoding.navigationdrawer.NavigationDrawerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_drawe"
+            android:theme="@style/Theme.ComposeApp">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".dicoding.tempconverter.TempConverterActivity"
             android:exported="false"
             android:label="@string/title_activity_temp_converter"
@@ -26,11 +42,6 @@
             android:exported="true"
             android:label="@string/title_activity_jet_coffe"
             android:theme="@style/Theme.ComposeApp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"
