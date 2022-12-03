@@ -42,4 +42,6 @@
     <string name="subscribe_question">Subscribe?</string>
     <string name="subscribed_info">Subscribed. You will informed when the feature is ready</string>
     <string name="title_activity_jet_heroes">JetHeroesActivity</string>
+    <string name="scroll_to_top">Scroll to Top</string>
+    <string name="search_hero">Cari pahlawanmu</string>
 </resources>
