@@ -1,5 +1,7 @@
 package com.example.composeapp.dicoding.jetheroes
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.composeapp.dicoding.jetheroes.data.HeroRepository
@@ -17,6 +19,16 @@ class JetHeroesViewModel(
     )
 
     val groupedHeroes: StateFlow<Map<Char, List<Hero>>> get() = _groupedHeroes
+
+    private val _query = mutableStateOf("")
+    val query: State<String> get() = _query
+
+    fun search(query: String) {
+        _query.value = query
+        _groupedHeroes.value = repository.searchHeroes(_query.value)
+            .sortedBy { it.name }
+            .groupBy { it.name[0] }
+    }
 }
 
 @Suppress("UNCHECKED_CAST")
