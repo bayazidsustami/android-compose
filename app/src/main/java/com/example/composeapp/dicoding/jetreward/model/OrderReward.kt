@@ -1,4 +1,6 @@
 package com.example.composeapp.dicoding.jetreward.model
 
-class OrderReward {
-}
+data class OrderReward(
+    val reward: Reward,
+    val count: Int
+)

@@ -1,4 +1,8 @@
 package com.example.composeapp.dicoding.jetreward.model
 
-class Reward {
-}
+data class Reward(
+    val id: Long,
+    val image: Int,
+    val title: String,
+    val requiredPoint: Int,
+)
