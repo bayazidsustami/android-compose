@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.composeapp.dicoding.jetreward.ui.JetRewardApp
 import com.example.composeapp.dicoding.jetreward.ui.theme.JetRewardAppTheme
 
 class JetRewardActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class JetRewardActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    JetRewardApp()
                 }
             }
         }
@@ -33,6 +34,6 @@ class JetRewardActivity : ComponentActivity() {
 @Composable
 fun JetRewardPreview() {
     JetRewardAppTheme {
-
+        JetRewardApp()
     }
 }
