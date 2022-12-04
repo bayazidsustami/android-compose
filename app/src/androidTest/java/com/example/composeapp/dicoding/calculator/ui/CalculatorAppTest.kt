@@ -1,11 +1,8 @@
 package com.example.composeapp.dicoding.calculator.ui
 
 import androidx.activity.ComponentActivity
-import androidx.compose.ui.test.assertHasNoClickAction
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
 import com.example.composeapp.R
 import com.example.composeapp.dicoding.calculator.ui.theme.CalculatorAppTheme
 import org.junit.Before
@@ -24,6 +21,7 @@ class CalculatorAppTest {
                 CalculatorApp()
             }
         }
+        composeTestRule.onRoot().printToLog("currentLabelExists")
     }
 
     @Test
