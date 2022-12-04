@@ -57,4 +57,6 @@
     <string name="enter_width">Masukkan lebar</string>
     <string name="count">Hitung!</string>
     <string name="result">Hasil: %s</string>
+    <string name="plus_symbol">+</string>
+    <string name="minus_symbol">-</string>
 </resources>
