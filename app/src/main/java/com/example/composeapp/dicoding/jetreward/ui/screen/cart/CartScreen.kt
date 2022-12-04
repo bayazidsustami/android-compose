@@ -68,28 +68,28 @@ fun CartContent(
                 fontSize = 18.sp,
                 textAlign = TextAlign.Center
             )
-            OrderButton(
-                text = stringResource(R.string.total_order, state.totalRequiredPoint),
-                enabled = state.orderReward.isNotEmpty(),
-                onClick = {},
-                modifier = Modifier.padding(16.dp)
-            )
-            LazyColumn(
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ){
-                items(state.orderReward, key = { it.reward.id}){ item ->
-                    CartItem(
-                        rewardId = item.reward.id,
-                        image = item.reward.image,
-                        title = item.reward.title,
-                        totalPoint = item.reward.requiredPoint * item.count,
-                        count = item.count,
-                        onProductCountChanged = onProductChange,
-                    )
-                }
+        }
+        OrderButton(
+            text = stringResource(R.string.total_order, state.totalRequiredPoint),
+            enabled = state.orderReward.isNotEmpty(),
+            onClick = {},
+            modifier = Modifier.padding(16.dp)
+        )
+        LazyColumn(
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ){
+            items(state.orderReward, key = { it.reward.id}){ item ->
+                CartItem(
+                    rewardId = item.reward.id,
+                    image = item.reward.image,
+                    title = item.reward.title,
+                    totalPoint = item.reward.requiredPoint * item.count,
+                    count = item.count,
+                    onProductCountChanged = onProductChange,
+                )
+                Divider()
             }
-            Divider()
         }
     }
 }
