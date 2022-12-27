@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,32 +15,85 @@
         android:theme="@style/Theme.ComposeApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".dicoding.calculator.CalculatorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_calculator"
+            android:theme="@style/Theme.ComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dicoding.jetreward.JetRewardActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="@string/title_activity_main"
             android:theme="@style/Theme.ComposeApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ArticleActivity"
-            android:exported="false"/>
+            android:name=".dicoding.jetheroes.JetHeroesActivity"
+            android:exported="false"
+            android:label="@string/title_activity_jet_heroes"
+            android:theme="@style/Theme.ComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
-            android:name=".TaskManagerActivity"
-            android:exported="false"/>
+            android:name=".dicoding.navigationdrawer.NavigationDrawerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigation_drawe"
+            android:theme="@style/Theme.ComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dicoding.tempconverter.TempConverterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_temp_converter"
+            android:theme="@style/Theme.ComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dicoding.jetcoffe.JetCoffeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_jet_coffe"
+            android:theme="@style/Theme.ComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".google.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.ComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".google.ArticleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".google.TaskManagerActivity"
+            android:exported="false" />
         <activity
             android:name=".google.QuadrantActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".google.BusinessCardActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
